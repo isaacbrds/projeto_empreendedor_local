@@ -1,0 +1,47 @@
+<%= form_with(model: produto) do |form| %>
+  <% if produto.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+        <% produto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome, class: 'form-control'  %>
+  </div>
+
+  <div>
+    <%= form.label :descricao, style: "display: block" %>
+    <%= form.text_area :descricao, class: 'form-control'  %>
+  </div>
+
+  <div>
+    <%= form.label :quantidade, style: "display: block" %>
+    <%= form.number_field :quantidade, class: 'form-control'  %>
+  </div>
+
+  <div>
+    <%= form.label :vencimento, style: "display: block" %>
+    <%= form.datetime_field :vencimento , class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :preco_compra, style: "display: block" %>
+    <%= form.text_field :preco_compra , class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :preco_venda, style: "display: block" %>
+    <%= form.text_field :preco_venda , class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

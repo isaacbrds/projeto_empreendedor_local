@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"> <img src="https://d335luupugsy2.cloudfront.net/cms/files/6382/1589384196/$cxu3cj3kjhw" alt="Icone Mainô" height="48"></a>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" <% if params[:controller] == "home" %> class="active" <% end %>>
+                    <%= link_to "Clientes", clientes_path , class: "nav-link" %>
+                </li>
+                <li class="nav-item" <% if params[:controller] == "produtos" %> class="active" <% end %>>
+                    <%= link_to "Produtos", produtos_path , class: "nav-link" %>
+                </li>
+                <li class="nav-item" <% if params[:controller] == "fornecedores" %> class="active" <% end %>>
+                    <%= link_to "Fornecedores", fornecedores_path , class: "nav-link" %>
+                </li>
+                <li class="nav-item" <% if params[:controller] == "despesas" %> class="active" <% end %>>
+                    <%= link_to "Despesas", despesas_path , class: "nav-link" %>
+                </li>
+                <li class="active">
+                    <%= link_to "Receitas", receitas_path , class: "nav-link" %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
